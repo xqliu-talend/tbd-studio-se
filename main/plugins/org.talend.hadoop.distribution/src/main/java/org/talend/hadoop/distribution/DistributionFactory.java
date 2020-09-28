@@ -51,8 +51,12 @@ public class DistributionFactory {
      * @throws Exception
      */
     public static boolean executeBooleanMethod(String methodName, String distribution, String version) throws Exception {
-        HadoopComponent hadoopComponent = DistributionFactory.buildDistribution(distribution, version);
-        return DistributionHelper.doSupportMethod(hadoopComponent, methodName);
+    	try {
+	        HadoopComponent hadoopComponent = DistributionFactory.buildDistribution(distribution, version);
+	        return DistributionHelper.doSupportMethod(hadoopComponent, methodName);		
+    	} catch (Exception e) {
+    		return false;
+    	}
     }
 
     /**
