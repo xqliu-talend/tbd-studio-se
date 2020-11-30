@@ -13,6 +13,7 @@
 
 package org.talend.hadoop.distribution.emr5290;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -35,11 +36,15 @@ import org.talend.hadoop.distribution.component.SparkBatchComponent;
 import org.talend.hadoop.distribution.component.SparkStreamingComponent;
 import org.talend.hadoop.distribution.component.SqoopComponent;
 import org.talend.hadoop.distribution.condition.ComponentCondition;
+import org.talend.hadoop.distribution.condition.common.SparkBatchLinkedNodeCondition;
 import org.talend.hadoop.distribution.constants.HDFSConstant;
 import org.talend.hadoop.distribution.constants.MRConstant;
 import org.talend.hadoop.distribution.constants.SparkBatchConstant;
 import org.talend.hadoop.distribution.constants.SparkStreamingConstant;
 import org.talend.hadoop.distribution.constants.emr.IAmazonEMRDistribution;
+import org.talend.hadoop.distribution.dynamic.template.modulegroup.DynamicModuleGroupConstant;
+import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.spark.DynamicSparkNodeModuleGroup;
+import org.talend.hadoop.distribution.emr.EMRDistribution;
 import org.talend.hadoop.distribution.emr5290.modulegroup.EMR5290HBaseModuleGroup;
 import org.talend.hadoop.distribution.emr5290.modulegroup.EMR5290HCatalogModuleGroup;
 import org.talend.hadoop.distribution.emr5290.modulegroup.EMR5290HDFSModuleGroup;
@@ -63,9 +68,10 @@ import org.talend.hadoop.distribution.emr5290.modulegroup.node.sparkstreaming.EM
 import org.talend.hadoop.distribution.emr5290.modulegroup.node.sparkstreaming.EMR5290SparkStreamingSqlRowHiveNodeModuleGroup;
 import org.talend.hadoop.distribution.kafka.SparkStreamingKafkaVersion;
 import org.talend.hadoop.distribution.spark.SparkClassPathUtils;
+import org.talend.hadoop.distribution.utils.ModuleGroupsUtils;
 
 @SuppressWarnings("nls")
-public class EMR5290Distribution extends AbstractDistribution implements HBaseComponent, HDFSComponent, MRComponent,
+public class EMR5290Distribution extends EMRDistribution implements HBaseComponent, HDFSComponent, MRComponent,
         HCatalogComponent, HiveComponent, SqoopComponent, IAmazonEMRDistribution, HiveOnSparkComponent,
         SparkBatchComponent, SparkStreamingComponent {
 
@@ -127,7 +133,7 @@ public class EMR5290Distribution extends AbstractDistribution implements HBaseCo
 
 	protected Map<NodeComponentTypeBean, Set<DistributionModuleGroup>> buildNodeModuleGroups(
 			String distribution, String version) {
-		Map<NodeComponentTypeBean, Set<DistributionModuleGroup>> result = new HashMap<>();
+	    Map<NodeComponentTypeBean, Set<DistributionModuleGroup>> result = super.buildNodeModuleGroups(distribution, version);
 
 		// WebHDFS
         Set<DistributionModuleGroup> webHDFSNodeModuleGroups = EMR5290WebHDFSModuleGroup.getModuleGroups(distribution, version);

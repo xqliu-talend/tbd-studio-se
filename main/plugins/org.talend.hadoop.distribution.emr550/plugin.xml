@@ -1517,6 +1517,14 @@
             name="breeze-macros_2.11-0.12.jar"
             mvn_uri="mvn:org.talend.libraries/breeze-macros_2.11-0.12/6.0.0"/>
 
+ 		<!-- GCS libraries -->
+        <libraryNeeded
+            context="plugin:org.talend.hadoop.distribution.emr580"
+            id="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            name="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            mvn_uri="mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop2-2.1.6/jar/shaded">
+        </libraryNeeded>
+
         <!-- Groups -->
 
         <!-- HDFS group -->
@@ -2030,6 +2038,14 @@
                 id="WEBHDFS-LIB-EMR_5_5_0_LATEST"
                 name="WEBHDFS-LIB-EMR_5_5_0_LATEST">
             <library id="jersey-client-1.9.jar"/>
+        </libraryNeededGroup>
+
+        <!-- GCS -->
+        <libraryNeededGroup
+                description="Librairies for GCS"
+                id="GCS-GROUP-EMR_5_5_0"
+                name="GCS-GROUP-EMR_5_5_0">
+            <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>
         </libraryNeededGroup>
 
     </extension>

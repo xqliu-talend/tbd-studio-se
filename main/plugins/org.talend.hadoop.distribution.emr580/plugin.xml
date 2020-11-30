@@ -1677,7 +1677,15 @@
             name="spark-streaming-flume-assembly_2.11-2.2.0.jar"
             mvn_uri="mvn:org.talend.libraries/spark-streaming-flume-assembly_2.11-2.2.0/6.0.0">
         </libraryNeeded>
-
+        
+ 		<!-- GCS libraries -->
+        <libraryNeeded
+            context="plugin:org.talend.hadoop.distribution.emr580"
+            id="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            name="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            mvn_uri="mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop2-2.1.6/jar/shaded">
+        </libraryNeeded>
+        
         <!-- Groups -->
 
         <!-- HDFS group -->
@@ -2173,6 +2181,14 @@
             <library id="jersey-client-1.9.jar"/>
         </libraryNeededGroup>
 
+        <!-- GCS -->
+        <libraryNeededGroup
+                description="Librairies for GCS"
+                id="GCS-GROUP-EMR_5_8_0"
+                name="GCS-GROUP-EMR_5_8_0">
+            <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>
+        </libraryNeededGroup>
+        
     </extension>
 
 	<extension
