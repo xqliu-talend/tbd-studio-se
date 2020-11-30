@@ -21,8 +21,10 @@ import org.talend.hadoop.distribution.DistributionModuleGroup;
 import org.talend.hadoop.distribution.NodeComponentTypeBean;
 import org.talend.hadoop.distribution.constants.SparkBatchConstant;
 import org.talend.hadoop.distribution.dynamic.adapter.DynamicPluginAdapter;
+import org.talend.hadoop.distribution.dynamic.template.modulegroup.DynamicModuleGroupConstant;
 import org.talend.hadoop.distribution.dynamic.template.modulegroup.DynamicSparkBatchModuleGroup;
 import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.spark.DynamicSparkDynamoDBNodeModuleGroup;
+import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.spark.DynamicSparkNodeModuleGroup;
 import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.sparkbatch.DynamicGraphFramesNodeModuleGroup;
 import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.sparkbatch.DynamicSparkBatchAzureNodeModuleGroup;
 import org.talend.hadoop.distribution.dynamic.template.modulegroup.node.sparkbatch.DynamicSparkBatchParquetNodeModuleGroup;
@@ -105,8 +107,12 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
         nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.TERADATA_CONFIG_COMPONENT), jdbcConfNodeModuleGroups);
         nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.ORACLE_CONFIG_COMPONENT), jdbcConfNodeModuleGroups);
 
-        // TODO: to be removed
         buildNodeModuleGroups4SparkBatch4Kudu(pluginAdapter, nodeModuleGroupsMap, distribution, version);
+        
+        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
+                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP_HADOOP2, "DISTRIB[#LINK@NODE.SPARK_CONFIGURATION.DISTRIBUTION, #LINK@NODE.SPARK_CONFIGURATION.SPARK_VERSION].isHadoop2[]"));
+        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
+                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP_HADOOP3, "DISTRIB[#LINK@NODE.SPARK_CONFIGURATION.DISTRIBUTION, #LINK@NODE.SPARK_CONFIGURATION.SPARK_VERSION].isHadoop3[]"));
     }
 
     protected Set<DistributionModuleGroup> buildNodeModuleGroups4SparkBatch4GraphFrames(DynamicPluginAdapter pluginAdapter,
