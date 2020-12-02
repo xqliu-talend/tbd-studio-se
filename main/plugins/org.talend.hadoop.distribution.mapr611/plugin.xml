@@ -795,7 +795,16 @@
 		<libraryNeeded context="plugin:org.talend.hadoop.distribution.mapr.6.1.1" id="jets3t-0.9.4.jar" name="jets3t-0.9.4.jar" mvn_uri="mvn:net.java.dev.jets3t/jets3t/0.9.4"/><!--0.9.0-->
 		<libraryNeeded context="plugin:org.talend.hadoop.distribution.mapr.6.1.1" id="avro-1.8.1.jar" name="avro-1.8.1.jar" mvn_uri="mvn:org.apache.avro/avro/1.8.1"/>
 
+ 		<!-- GCS libraries -->
+        <libraryNeeded
+            context="plugin:org.talend.hadoop.distribution.mapr.6.1.1"
+            id="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            name="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            mvn_uri="mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop2-2.1.6/jar/shaded">
+        </libraryNeeded>
+
 		<!-- Groups -->
+		
         <libraryNeededGroup
                 description="S3 libraries for MapR 6.1.1"
                 id="S3-LIB-MAPR611"
@@ -1338,6 +1347,14 @@
                 name="SPARK-MAPRSTREAMS-CLIENT-LIB-MRREQUIRED-MAPR611">
             <group id="SPARK-KAFKA-CLIENT-LIB-MRREQUIRED-MAPR611" />
             <library id="mapr-streams-6.1.0-mapr.jar" />
+        </libraryNeededGroup>
+
+        <!-- GCS -->
+        <libraryNeededGroup
+                description="Librairies for GCS"
+                id="GCS-GROUP-MAPR611"
+                name="GCS-GROUP-MAPR610">
+            <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>
         </libraryNeededGroup>
         
     </extension>
