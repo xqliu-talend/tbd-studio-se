@@ -351,7 +351,7 @@
 
         <!-- GCS -->
         <libraryNeededGroup
-                description="Librairies for GCS"
+                description="Libraries for GCS"
                 id="GCS-GROUP-Databricks_5_5"
                 name="GCS-GROUP-Databricks_5_5">
             <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>

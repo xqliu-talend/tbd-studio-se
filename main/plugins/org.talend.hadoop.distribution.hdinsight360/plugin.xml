@@ -304,7 +304,7 @@
 
         <!-- GCS -->
         <libraryNeededGroup
-                description="Librairies for GCS"
+                description="Libraries for GCS"
                 id="GCS-GROUP-MICROSOFT_HD_INSIGHT_3_6"
                 name="GCS-GROUP-MICROSOFT_HD_INSIGHT_3_6">
             <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>

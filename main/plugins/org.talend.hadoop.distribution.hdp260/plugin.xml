@@ -1692,7 +1692,7 @@
              
         <!-- GCS -->
         <libraryNeededGroup
-                description="Librairies for GCS"
+                description="Libraries for GCS"
                 id="GCS-GROUP-HDP_2_6"
                 name="GCS-GROUP-HDP_2_6">
             <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>

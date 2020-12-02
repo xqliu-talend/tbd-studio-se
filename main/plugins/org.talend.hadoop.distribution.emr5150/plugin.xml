@@ -2423,7 +2423,7 @@
 
         <!-- GCS -->
         <libraryNeededGroup
-                description="Librairies for GCS"
+                description="Libraries for GCS"
                 id="GCS-GROUP-EMR_5_15_0"
                 name="GCS-GROUP-EMR_5_15_0">
             <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>
