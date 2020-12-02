@@ -1,7 +1,8 @@
 package org.talend.hadoop.distribution.constants;
 
 public enum ModuleGroupName {
-    GCS("GCS-GROUP");
+    GCS("GCS-GROUP"),
+    BIGQUERY("BIGQUERY-GROUP"),;
     
     private String baseName;
     
