@@ -110,7 +110,7 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
         buildNodeModuleGroups4SparkBatch4Kudu(pluginAdapter, nodeModuleGroupsMap, distribution, version);
         
         nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
-                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP, null));
+                                buildModuleGroups4SparkBatch4GCS(pluginAdapter, distribution, version));
     }
 
     protected Set<DistributionModuleGroup> buildNodeModuleGroups4SparkBatch4GraphFrames(DynamicPluginAdapter pluginAdapter,
@@ -138,4 +138,10 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
             throws Exception {
         // nothing to do
     }
+    
+    protected  Set<DistributionModuleGroup> buildModuleGroups4SparkBatch4GCS(DynamicPluginAdapter pluginAdapter,
+            String distribution, String version) throws Exception {
+         return new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP, null);  
+     }
+    
 }
