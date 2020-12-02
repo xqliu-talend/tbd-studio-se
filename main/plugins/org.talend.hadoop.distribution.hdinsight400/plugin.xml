@@ -286,6 +286,15 @@
                 id="commons-logging-1.2"
                 name="commons-logging-1.2.jar"
                 mvn_uri="mvn:commons-logging/commons-logging/1.2"/>
+                
+ 		<!-- GCS libraries -->
+        <libraryNeeded
+            context="plugin:org.talend.hadoop.distribution.hdinsight400"
+            id="gcs-connector-hadoop3-2.1.6-shaded.jar"
+            name="gcs-connector-hadoop3-2.1.6-shaded.jar"
+            mvn_uri="mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop3-2.1.6/jar/shaded">
+        </libraryNeeded>
+                
         <!-- Groups -->
 
         <!-- Big Data launcher group -->
@@ -500,6 +509,15 @@
             <!-- needed by avro structures generated in jobs -->
             <library id="jackson-core-asl-1.9.14-TALEND"/>
         </libraryNeededGroup>
+        
+        <!-- GCS -->
+        <libraryNeededGroup
+                description="Librairies for GCS"
+                id="GCS-GROUP-MICROSOFT_HD_INSIGHT_4_0"
+                name="GCS-GROUP-MICROSOFT_HD_INSIGHT_4_0">
+            <library id="gcs-connector-hadoop3-2.1.6-shaded.jar"/>
+        </libraryNeededGroup>
+        
 
     </extension>
 </plugin>

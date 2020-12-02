@@ -155,6 +155,14 @@
             mvn_uri="mvn:org.talend.libraries/joda-time-2.7/6.0.0">
         </libraryNeeded>
 
+ 		<!-- GCS libraries -->
+        <libraryNeeded
+            context="plugin:org.talend.hadoop.distribution.hdinsight340"
+            id="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            name="gcs-connector-hadoop2-2.1.6-shaded.jar"
+            mvn_uri="mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop2-2.1.6/jar/shaded">
+        </libraryNeeded>
+        
         <!-- Groups -->
 
         <!-- Big Data launcher group -->
@@ -302,6 +310,14 @@
                 <library id="hadoop-azure-2.7.4"/>
                 <library id="jetty-util-6.1.26"/>
         </libraryNeededGroup> -->
+
+        <!-- GCS -->
+        <libraryNeededGroup
+                description="Librairies for GCS"
+                id="GCS-GROUP-MICROSOFT_HD_INSIGHT_3_4"
+                name="GCS-GROUP-MICROSOFT_HD_INSIGHT_3_4">
+            <library id="gcs-connector-hadoop2-2.1.6-shaded.jar"/>
+        </libraryNeededGroup>
 
     </extension>
     <extension
