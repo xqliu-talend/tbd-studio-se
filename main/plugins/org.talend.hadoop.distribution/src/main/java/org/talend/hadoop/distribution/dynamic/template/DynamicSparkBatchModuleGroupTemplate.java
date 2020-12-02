@@ -110,9 +110,7 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
         buildNodeModuleGroups4SparkBatch4Kudu(pluginAdapter, nodeModuleGroupsMap, distribution, version);
         
         nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
-                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP_HADOOP2, "DISTRIB[#LINK@NODE.SPARK_CONFIGURATION.DISTRIBUTION, #LINK@NODE.SPARK_CONFIGURATION.SPARK_VERSION].isHadoop2[]"));
-        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
-                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP_HADOOP3, "DISTRIB[#LINK@NODE.SPARK_CONFIGURATION.DISTRIBUTION, #LINK@NODE.SPARK_CONFIGURATION.SPARK_VERSION].isHadoop3[]"));
+                                new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP, null));
     }
 
     protected Set<DistributionModuleGroup> buildNodeModuleGroups4SparkBatch4GraphFrames(DynamicPluginAdapter pluginAdapter,

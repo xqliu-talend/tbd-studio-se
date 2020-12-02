@@ -1291,14 +1291,6 @@
             "jarName": "gcs-connector-hadoop2-2.1.6-shaded.jar",
             "mvnUri": "mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop2-2.1.6/jar/shaded",
             "useStudioRepository": "true"
-        },
-        {
-            "id": "gcs-connector-hadoop3",
-            "type": "STANDARD",
-            "context": "{properties.context}",
-            "jarName": "gcs-connector-hadoop3-2.1.6-shaded.jar",
-            "mvnUri": "mvn:com.google.cloud.bigdataoss/gcs-connector/hadoop3-2.1.6/jar/shaded",
-            "useStudioRepository": "true"
         }
     ],
     "moduleGroups": [
@@ -1643,19 +1635,12 @@
             ]
         },
         {
-            "id": "GCS-HADOOP2-LIB-DYNAMIC",
+            "id": "GCS-LIB-DYNAMIC",
             "description": "",
             "modules": [
                 "gcs-connector-hadoop2"
             ]
-        },
-        {
-            "id": "GCS-HADOOP3-LIB-DYNAMIC",
-            "description": "",
-            "modules": [
-                "gcs-connector-hadoop3"
-            ]
-        }    
+        }
     ],
     "classLoaders": [
         {
