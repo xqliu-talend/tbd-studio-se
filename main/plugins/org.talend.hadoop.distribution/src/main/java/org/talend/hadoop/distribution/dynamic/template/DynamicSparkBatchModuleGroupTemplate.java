@@ -109,8 +109,8 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
 
         buildNodeModuleGroups4SparkBatch4Kudu(pluginAdapter, nodeModuleGroupsMap, distribution, version);
         
-        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), 
-                                buildModuleGroups4SparkBatch4GCS(pluginAdapter, distribution, version));
+        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.GCS_CONFIG_COMPONENT), buildModuleGroups4SparkBatch4GCS(pluginAdapter, distribution, version));
+        nodeModuleGroupsMap.put(new NodeComponentTypeBean(ComponentType.SPARKBATCH, SparkBatchConstant.BIGQUERY_CONFIG_COMPONENT), buildModuleGroups4SparkBatch4BigQuery(pluginAdapter, distribution, version));
     }
 
     protected Set<DistributionModuleGroup> buildNodeModuleGroups4SparkBatch4GraphFrames(DynamicPluginAdapter pluginAdapter,
@@ -143,5 +143,10 @@ public class DynamicSparkBatchModuleGroupTemplate extends AbstractDynamicModuleG
             String distribution, String version) throws Exception {
          return new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP, null);  
      }
-    
+
+    protected  Set<DistributionModuleGroup> buildModuleGroups4SparkBatch4BigQuery(DynamicPluginAdapter pluginAdapter,
+            String distribution, String version) throws Exception {
+         return new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(distribution, version, DynamicModuleGroupConstant.BIGQUERY_MODULE_GROUP, null);  
+     }
+
 }

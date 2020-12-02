@@ -61,6 +61,7 @@ public enum DynamicModuleGroupConstant implements IDynamicModuleGroupConstant {
     TEZ_SERVER_MODULE_GROUP("TEZ-SERVER-LIB-DYNAMIC"), //$NON-NLS-1$
     WEBHDFS_MODULE_GROUP("WEBHDFS-LIB-DYNAMIC"), //$NON-NLS-1$
     GCS_MODULE_GROUP("GCS-LIB-DYNAMIC"),
+    BIGQUERY_MODULE_GROUP("BIGQUERY-LIB-DYNAMIC"),
     ;
 
     private String mModuleName;
