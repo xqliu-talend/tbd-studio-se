@@ -77,5 +77,14 @@ public class DynamicCDPSparkBatchModuleGroupTemplate extends DynamicSparkBatchMo
          return new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(IClouderaDistribution.DISTRIBUTION_NAME, version, DynamicModuleGroupConstant.GCS_MODULE_GROUP, null);  
      }
 
+    /**
+     * Specific CDP override to bypass inconsistency between "CDP" from ICDPDistribution and "CLOUDERA" used in UI  
+     */
+    @Override
+    protected  Set<DistributionModuleGroup> buildModuleGroups4SparkBatch4BigQuery(DynamicPluginAdapter pluginAdapter,
+            String distribution, String version) throws Exception {
+         return new DynamicSparkNodeModuleGroup(pluginAdapter).getModuleGroups(IClouderaDistribution.DISTRIBUTION_NAME, version, DynamicModuleGroupConstant.BIGQUERY_MODULE_GROUP, null);  
+     }
+
     
 }
