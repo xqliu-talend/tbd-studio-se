@@ -56,7 +56,7 @@
     },
     {
       "id": "parquet-avro-1.8.2",
-      "type": "BASE",
+      "type": "STANDARD",
       "context": "{properties.context}",
       "groupId": "org.apache.parquet",
       "artifactId": "parquet-avro",
@@ -66,7 +66,7 @@
     },
     {
       "id": "parquet-common-1.8.2",
-      "type": "BASE",
+      "type": "STANDARD",
       "context": "{properties.context}",
       "groupId": "org.apache.parquet",
       "artifactId": "parquet-common",
@@ -76,7 +76,7 @@
     },
     {
       "id": "parquet-column-1.8.2",
-      "type": "BASE",
+      "type": "STANDARD",
       "context": "{properties.context}",
       "groupId": "org.apache.parquet",
       "artifactId": "parquet-column",
@@ -86,7 +86,7 @@
     },
     {
       "id": "parquet-hadoop-1.8.2",
-      "type": "BASE",
+      "type": "STANDARD",
       "context": "{properties.context}",
       "groupId": "org.apache.parquet",
       "artifactId": "parquet-hadoop",
@@ -96,7 +96,7 @@
     },
     {
       "id": "avro-mapred-1.8.2",
-      "type": "BASE",
+      "type": "STANDARD",
       "context": "{properties.context}",
       "groupId": "org.apache.avro",
       "artifactId": "avro-mapred",
