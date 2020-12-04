@@ -104,7 +104,7 @@ public class CDH580Distribution extends CDHDistribution implements IClouderaDist
         // moduleGroups.put(ComponentType.SPARKBATCH, CDH580SparkBatchModuleGroup.getModuleGroups());
 
         // Used to add a module group import for a specific node. The given node must have a HADOOP_LIBRARIES parameter.
-        super.buildNodeModuleGroups(distribution, version);
+        nodeModuleGroups = super.buildNodeModuleGroups(distribution, version);
 
         // WebHDFS
         Set<DistributionModuleGroup> webHDFSNodeModuleGroups = CDH580WebHDFSModuleGroup.getModuleGroups(distribution, version);
