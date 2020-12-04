@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.talend.model,
  org.eclipse.ui.workbench
 Export-Package: org.talend.hadoop.distribution,
+ org.talend.hadoop.distribution.cdh,
  org.talend.hadoop.distribution.component,
  org.talend.hadoop.distribution.condition,
  org.talend.hadoop.distribution.condition.common,
