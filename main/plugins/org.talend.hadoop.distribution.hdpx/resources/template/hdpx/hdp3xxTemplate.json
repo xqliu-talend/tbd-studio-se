@@ -96,7 +96,7 @@
     },
     {
       "id": "avro-mapred-1.8.2",
-      "type": "STANDARD",
+      "type": "BASE",
       "context": "{properties.context}",
       "groupId": "org.apache.avro",
       "artifactId": "avro-mapred",
