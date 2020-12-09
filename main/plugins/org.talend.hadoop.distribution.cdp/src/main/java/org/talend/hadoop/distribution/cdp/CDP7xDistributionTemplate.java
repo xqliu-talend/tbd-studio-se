@@ -269,6 +269,11 @@ public class CDP7xDistributionTemplate extends AbstractDynamicCDPDistributionTem
 	public boolean doSupportAssumeRole() {
 		return true;
 	}
+	
+	@Override
+    public boolean doSupportExtendedAssumeRole() {
+        return true;
+    }
 
 	@Override
 	public boolean doSupportAvroDeflateProperties() {
