@@ -115,13 +115,13 @@
         },
 
         {
-            "id": "hadoop-aws",
-            "type": "STANDARD",
-            "context": "{properties.context}",
-            "jarName": "hadoop-aws-3.1.1.7.1.1.0-565.jar",
-            "mvnUri": "mvn:org.apache.hadoop/hadoop-aws/3.1.1.7.1.1.0-565",
-            "useStudioRepository": "true",
-            "description": ""
+            "id" : "hadoop-aws",
+            "type" : "BASE",
+            "context" : "{properties.context}",
+            "groupId" : "org.apache.hadoop",
+            "artifactId" : "hadoop-aws",
+            "classifier" : "",
+            "description" : ""
         },
         {
             "id" : "hadoop-azure-datalake",
