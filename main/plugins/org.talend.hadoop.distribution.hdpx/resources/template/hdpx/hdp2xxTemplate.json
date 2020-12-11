@@ -1264,13 +1264,6 @@
       ]
     },
     {
-      "id": "HDFS-NOT-SPARK-1-6-LIB-DYNAMIC",
-      "description": "Hdfs libraries for every execution engine except Spark 1.6",
-      "modules": [
-      	"jackson-core-2.6.6"
-      ]
-    },
-    {
       "id": "HIVE-LIB-DYNAMIC",
       "description": "",
       "modules": [
