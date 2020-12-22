@@ -18,6 +18,7 @@ import org.talend.hadoop.distribution.DistributionModuleGroup;
 import org.talend.hadoop.distribution.EHadoopVersion;
 import org.talend.hadoop.distribution.ESparkVersion;
 import org.talend.hadoop.distribution.NodeComponentTypeBean;
+import org.talend.hadoop.distribution.cdh5x.CDH5xDistributionTemplate;
 import org.talend.hadoop.distribution.component.HBaseComponent;
 import org.talend.hadoop.distribution.component.HCatalogComponent;
 import org.talend.hadoop.distribution.component.HDFSComponent;
@@ -60,6 +61,9 @@ public abstract class AbstractDynamicDistributionTemplate extends AbstractDistri
         IDynamicPluginConfiguration configuration = pluginAdapter.getPluginConfiguration();
         versionId = configuration.getId();
         versionDisplay = configuration.getName();
+        if ("CDH5xDistributionTemplate".equals(configuration.getTemplateId())) {
+        	versionDisplay.replaceAll("Dynamic", "Deprecated");
+        }
 
         moduleGroupsTemplateMap = buildModuleGroupsTemplateMap();
 
