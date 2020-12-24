@@ -11763,7 +11763,7 @@
       "childNodes" : [ ],
       "context" : "plugin:org.talend.hadoop.distribution.cdh5x",
       "excludeDependencies" : "true",
-      "id" : "DYNAMIC_Cloudera_CDH6_1_1_commons_compress_1_19_jar",
+      "id" : "DYNAMIC_Cloudera_CDH6_1_1_commons_compress_1_11_jar",
       "mvn_uri" : "mvn:org.apache.commons/commons-compress/1.19/jar",
       "name" : "commons-compress-1.19.jar",
       "tagName" : "libraryNeeded"
